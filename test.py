@@ -54,8 +54,8 @@ def test_real_files_integration():
         [('brandB', 4.5), ('brandA', 3.5)]
     ),
     ([
-        ['p1', 'apple', 500, 4.0], ['p2', 'apple', 600, 5.0]],
-        [('apple', 4.5)]
+        ['phone1', 'brandA', 500, 4.0], ['phone2', 'brandA', 600, 5.0]],
+        [('brandA', 4.5)]
     ),
         ([], [])
 ])
@@ -108,4 +108,5 @@ def test_many_files():
     finally:
         for f in files:
             os.unlink(f)
+
 
