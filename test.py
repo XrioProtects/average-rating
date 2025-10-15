@@ -50,8 +50,8 @@ def test_real_files_integration():
 
 @pytest.mark.parametrize("input_data, brands_ratings", [
     ([
-        ['phone1','brandA', 100, 4.0],['phone2', 'brandB', 200, 5.0]],
-        [('brandB', 5.0), ('brandA', 4.0)]
+        ['phone1','brandA', 100, 4.0],['phone2', 'brandB', 200, 5.0], ['phone3','brandA', 100, 3.0], ['phone4', 'brandB', 200, 4.0]],
+        [('brandB', 4.5), ('brandA', 3.5)]
     ),
     ([
         ['p1', 'apple', 500, 4.0], ['p2', 'apple', 600, 5.0]],
@@ -108,3 +108,4 @@ def test_many_files():
     finally:
         for f in files:
             os.unlink(f)
+
