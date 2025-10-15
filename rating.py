@@ -22,11 +22,9 @@ def generate_average_rating_report(path):
 
 
 def main():
-
     reports = {
         'average-rating': generate_average_rating_report,
     }
-
     parser = argparse.ArgumentParser(description='Скрипт для обработки CSV-файлов и формирования отчетов.')
     parser.add_argument('--files', nargs="+", required= True, type=str,  help='Пути к файлам')
     parser.add_argument('--report', default='average-rating', type=str, help='Название отчета')
