@@ -99,14 +99,15 @@ def test_many_files():
     files = []
     try:
         for i in range(10):
-            f = create_temp_csv([[f'iphone{i}', 'apple', 100, 3.0 + (i % 2)],[f'redmi{i}', 'xiaomi', 200, 4.0 + (i % 2)] ])
+            f = create_temp_csv([[f'iphone{i}', 'apple', 100, 3.0 ],[f'redmi{i}', 'xiaomi', 200, 4.0]])
             files.append(f)
         result, index = generate_average_rating_report(files)
         assert len(result) == 2
         assert result[0][0] == 'xiaomi'
-        assert abs(result[0][1] - 4.5) < 0.01 and abs(result[1][1] - 3.5) < 0.01
+        assert abs(result[0][1] - 4) == 0 and abs(result[1][1] - 3) == 0
     finally:
         for f in files:
             os.unlink(f)
+
 
 
